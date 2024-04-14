@@ -12,7 +12,8 @@
 \usepackage{algorithmic}
 \usepackage[nothing]{algorithm}
 \usepackage{color}
-\usepackage{graphicx} 
+\usepackage{graphicx}
+\usepackage{ragged2e}
 
 
 % Colores de fondo de las soluciones
@@ -82,123 +83,27 @@ $
 \end{tabular}
 &\ \ \ & 
 \begin{tabular}{l}
-Pontificia Universidad Católica de Chile\\
-Escuela de Ingeniería\\
-Departamento de Ingeniería Industrial y de Sistemas \\
-
-Profesores:  Gustavo Angulo, Raimundo Cuadrado,\\        Camila Balbontín, Gonzalo Pérez \\
-Ayudante Coordinador de Tareas: Juan Enrique Hurtado  \\
+PONTIFICIA UNIVERSIDAD CATÓLICA DE CHILE\\
+ESCUELA DE INGENIERÍA\\
+DEPARTAMENTO DE INGENIERÍA INDUSTRIAL Y DE SISTEMAS\\
 \end{tabular}
 \end{tabular}
 
 \begin{center}
 \bf ICS1113 - Optimización\\
-\bf 1er semestre del 2024\lb
+\bf 1er semestre del 2024\
 
 \vspace{0.5cm}
 
 \bf {\Huge Tarea 1 ICS1113}
 \end{center}
 
-Reglas de la tarea:
-\begin{itemize}
-    \item La tarea se puede realizar de a pares o de forma individual (las parejas pueden ser de diferentes secciones). En caso de ser de a pares se debe inscribir con su pareja en los grupos de Canvas. 
-
-    \item La tarea debe ser subida \textbf{por solo uno de los integrantes} a Canvas.
-    
-    \item La tarea se entrega el día 15/04/2024 a las 23:59 horas. 
-    
-    \item Existirá la opción de usar un cupón de atraso solamente una vez entre las tres tareas, dando la posibilidad de entregar hasta 24 horas después de finalizada la entrega. Para poder acceder a este cupón se deben inscribir con el nombre de los integrantes de la tarea en un Google Forms que será habilitado en su debido tiempo y que cierra junto a la fecha oficial de la entrega. En caso de ser de a pares ambos deben tener un cupón disponible y se usará uno por cada uno y tendrán 24 horas extra (no 48).
-
-    \item Las tareas atrasadas no serán corregidas, así que recuerden entregarlas a tiempo. 
-
-    \item Esta tarea es grupal y el desarrollo y discusión debe ocurrir dentro de cada grupo. No se distribuyan la resolución de las preguntas por separado, hagan realmente un trabajo grupal de desarrollo ya que el no hacerlo va contra la idea de aprendizaje colaborativo y preparación individual de la interrogación a la que está asociada la tarea. Pueden discutir los problemas con los profesores y los ayudantes del curso, pero al final cada grupo debe entregar sus propias soluciones, desarrolladas y escritas por el grupo. La copia o intento de copia a otros grupos será sancionada dependiendo la gravedad (a ser determinada por el equipo docente del curso) con consecuencias que podrían ir desde un 1.0 en la nota de la Tarea hasta la escalación a la Dirección de Docencia de la Escuela, con posible \textbf{REPROBACIÓN AUTOMÁTICA} del curso.
-    
-    \item Por entregar en latex se darán 3 décimas para la tarea entregada, las décimas no son transferibles a otras actividades. Para subirlo tendrá que enviar un archivo .pdf y el archivo .tex correspondientes (también se puede incluir el .zip de Overleaf). En caso de no entregar en latex basta con subir un archivo .pdf que contenga las respuestas. Si se hace a mano, debe ser una tarea legible o habrán descuentos a criterio del corrector. En ambos casos los .pdf tienen que contener los nombres de los integrantes.
-
-    \item El formato de entrega oficial es subir 2 archivos como mínimo y un tercer archivo opcional. Los dos archivos obligatorios son el .pdf y main.py. El archivo opcional es el de extensión .tex o el .zip del proyecto de latex de Overleaf.
-
-    \item Se abrirá un foro en Canvas donde se responderán las dudas que puedan surgir del enunciado. 
-\end{itemize}
-
-
-\newpage
-\begin{questions}
-
-    
-    \question[20]
-
-Aguas es una empresa de camiones aljibe de una gran región. Busca minimizar los costos asociados a cumplir una demanda de despachos de agua a lo largo de un conjunto $T$ de días. Por una parte, existe un conjunto $N$ de puntos de demanda, y cada punto $n \in N$ solicita exactamente $d_{n,t}$ $m^3$ de agua cada día $t\in T$. Por otra parte, la empresa tiene un conjunto  $\Gamma$ de camiones aljibe idénticos que tienen una capacidad máxima de W $m^3$ de agua para transportar en cada viaje. La empresa cuenta con la posibilidad de estacionar sus camiones en un conjunto $\Theta$ de parques de estacionamientos, cada uno con capacidad mayor o igual a $|\Gamma|$ estacionamientos.
-Todas las noches, y cuando no están viajando, los camiones deben permanecer en un parque de estacionamiento. En cada parque, cada camión debe pagar una tarifa que se cobra sólo en la noche a partir del día 1. Ahí recargan el agua necesaria sin costo. Todos los camiones, comienzan el día 1 en la mañana desde el parque de estacionamiento número 1. Cada día, cada camión debe decidir si sale o no a despachar agua a un único punto de demanda  y regresar a cualquier parque de estacionamiento para pasar la noche. Si no sale, debe permanecer en el parque hasta el próximo día, pagando denuevo la tarifa del parque en el que permanece. La tarifa para cada camión en un parque $b \in \Theta $ es $CL_b$ pesos por noche. Para cualquier camión, el costo de viajar entre el parque $b \in \Theta $ y el punto de demanda $n \in N$ es $c_{b,n}$ pesos, ya sea de ida o de vuelta. Las demandas de agua suelen ser muy grandes y las distancias a recorrer muy largas, pero realizables en un día. Es por esa razón que, para simplificar la logística, sólo se le permite, como máximo, a cada camión viajar a un punto de demanda cada día, y se debe conocer la cantidad exacta de agua que llevará ese día.
-
-Formule un modelo de optimización lineal mixto, que logre minimizar los costos de la empresa Aguas durante el marco de tiempo indicado, y  satisfaciendo la demanda. Escriba claramente las variables de decisión, restricciones y función objetivo del modelo.\\
-
-
-
-
-
-
-    \question[20]
-
-La empresa Rayos tiene el monopolio de generación y transmisión de energía eléctrica en el país Demo. Rayos quiere minimizar sus costos, satisfaciendo la demanda en un día típico de 24 horas. A lo largo y ancho del país, la empresa tiene instalado un conjunto $N$ de plantas generadoras. Además, existe un conjunto $M$ de nodos de consumo eléctrico en el país. Para cada hora $h\in H= \{1,...,24\}$, existe una demanda de $D_{m,h}$ MWh que debe llegar al nodo de consumo de índice $m \in M$,  después de restar las pérdidas en los cables. Cada generadora $n \in N$ decide cuánta energía en MWh envía de manera constante a cada nodo durante cada hora $h \in H$, sin superar su capacidad máxima de producción por hora que es $CN_{n,h}$. Todas las generadoras están apagadas inicialmente, sin poder producir. Sin embargo, si se decide encender la generadora $n \in N$ en la hora $h \in H$, entonces desde esa hora se podrá producir hasta el final del día costando $c_{n,h}$ pesos dicha acción. Existe un conjunto $\Phi$ que contiene todos los pares $(n,m)$ tales que existe una conexión única por cable entre la generadora $n \in N$ y el nodo $m \in M$. Para cada conexión, existe una pérdida de la energía enviada por concepto de resistencia normal y resitencia no óhmica en los cables. Esta pérdida de energía es proporcional a la energía enviada, según un coeficiente de pérdida $R_{n,m}$, entre la generadora $n \in N$ y el nodo de consumo $m \in M$. Además, el  parámetro $G_{n,m}$ (medido en $\frac{1}{MWh}$) representa un factor que debe multiplicarse por el cuadrado de la energía enviada cada hora para obtener la energía perdida en el cable por a su comportamiento no óhmico. Además, esa conexión solo puede transmitir un máximo de $CL_{n,m}$ MWh cada hora. Si $(n,m) \notin \Phi$, entonces $R_{n,m}$, $G_{n,m}$  y $CL_{n,m}$ deben ser ignorados. El costo medio variable de generar L unidades de energía (MWh) está determinado en cada planta $n \in N$  y en cada hora $h \in H$ por una función afín decreciente: CMeV (L) = $a_{n,h} - b_{n,h}\cdot L$. Se debe considerar que la unidad de medida de $a_{n,h}$ es el peso, y que la de $b_{n,h}$ es pesos por cada unidad de MWh. El costo  de producir, en una hora de generación, se obtiene multiplicando lo producido por el costo medio variable de producir esa cantidad.
-
-Formule un modelo de optimización no lineal que ayude a la empresa Rayos a minimizar sus costos en total satisfaciendo la demanda de todos los nodos de consumo del país. Escriba claramente las variables de decisión, restricciones y función objetivo del modelo.\\
-
-\newpage
-    \question[20]
-    \section{Implementación computacional}
-\subsection{Descripción del problema}
-Considere el siguiente problema de optimización: \\
-En la empresa Gallos, se enfrentan al desafío de alimentar a los pollos de la manera más adecuada y económica posible. La idea es combinar diferentes tipos de cereales para satisfacer las necesidades nutricionales de las aves, al mismo tiempo que se minimizan los costos. El veterinario de la empresa ha identificado un conjunto $I$ de nutrientes esenciales, y es crucial que cada nutriente $i \in I$ esté presente en la mezcla final dentro de un rango de proporciones específico. Este rango se define por dos valores: el límite inferior $b_i$ y el límite superior $l_i$. Estos valores representan porcentajes de masa-masa que oscilan entre 0 y 1. Por ejemplo, si $b_i$ es igual a 0.15, esto significa que al menos el 15$\%$ de la masa total de la mezcla final debe consistir en masa del nutriente $i \in I$. Para cumplir con esos requerimientos se dispone de un conjunto $J$ de diferentes tipos de cereales. Cada cereal $j \in J$ tiene un costo por kilogramo $c_j$ y contiene un porcentaje masa-masa $a_{i,j}$ del nutriente $i \in I$.
-
-\subsection{Modelo}
-Un modelo de optimización lineal que modela esta situación es el siguiente:\\
-
-Variables:\\
-\begin{itemize}
-            \item $x_{j} :=$ Proporción (masa-masa) en la que está presente el cereal $j \in J$ en la mezcla final.
-\end{itemize}
-Restricciones:
-\begin{itemize}
-            \item La mezcla está compuesta únicamente por cereales.
-            \[ \sum_{j\in J} x_{j} =1 \]            
-            \item Se debe cumplir una proporción mínima de nutrientes.
-            \[\sum_{j \in J} a_{i,j}\cdot x_{j} \geq b_i \; \forall i \in I \]
-            \item Se debe cumplir una proporción máxima de nutrientes.
-            \[\sum_{j\in J} a_{i,j}\cdot x_j \leq l_i \; \forall i \in I \]
-            \item Naturaleza de las variables.
-            \[ x_j \geq 0 \; \forall j \in J \]
-\end{itemize}
-Función Objetivo:
-\begin{itemize}
-            \item 
-            \[\min \sum_{j \in J} c_j \cdot x_{j} \]
-\end{itemize}
-
-
-Lo que se pide a grandes rasgos en esta pregunta es la implementación computacional del modelo de este problema. Se solicita la elaboración de un código de Python en que se utilice la librería Gurobi para resolver el problema. Ese código debe poder recibir cualquier instancia de parámetros, como se explica en el apartado. A continuación se indicarán los elementos técnicos a considerar en esta pregunta.\\
-
-\subsection{Base de datos:}
-
-La implementación computacional de este problema debe ser un código que pueda recibir cualquier instancia de valores de los parámetros. No puede asumir valores ni cardinalidades de ningún parámetro o conjunto. Tanto los cereales como los nutrientes serán trabajados de manera abstracta, sólo considerándolos por sus índices. Toda la información de las instancias de datos vendrán en 3 archivos con extensión .csv. Ejemplos de estos archivos se pueden descargar desde Canvas, junto al enunciado de la tarea. Es fuertemente recomendado testear la robustez del código con estas instancias, ya que para la evaluación se utilizarán unos de idéntico formato pero con diferentes valores y dimensiones. A continuación se detalla el formato de cada uno de estos archivos.
-
-\subsubsection{costos.csv}
-Este archivo CSV tiene solo 1 columna y $(|J|+1)$ filas. Contiene los costos $c_j$ de cada cereal $j \in J$. En la primera fila, está el encabezado del archivo: costo$\_$por$\_$kg. A partir de la segunda fila en adelante vienen los valores $\frac{\$CLP}{kg}$ de cada uno de los cereales. Por lo tanto, en la segunda fila del archivo está el valor del precio del cereal 1, en la tercera está el precio del cereal 2, y así sucesivamente.
-
-\subsubsection{limites.csv}
-Este archivo CSV tiene 2 columnas  e $(|I| +1)$ filas. Contiene los límites inferior $b_i$ y superior $l_i$ para las proporciones en que debe estar el nutriente $i \in I$ en la mezcla. En la primera fila, está el encabezado del archivo: limite$\_$inferior, limite$\_$superior. A partir de la segunda fila en adelante, vienen los límites de cada uno de los nutrientes. Primero viene el límite inferior, y despues de una coma viene el límite superior. Por lo tanto, en la segunda fila del archivo están los límites del nutriente 1, en la tercera están los límites del nutriente 2, y así sucesivamente.
-
-\subsubsection{contenidos$\_$nutricionales.csv}
-Este archivo CSV tiene $|J|$ columnas e $(|I| +1)$ filas. Contiene las fracciones masa-masa $a_{i,j}$ de nutriente $i \in I$ que tiene cada cereal $j \in J$. En la primera fila, está el encabezado de las columnas del archivo: cereal1,cereal2,ceral3,..,cerealJ. En las siguientes filas, se muestran separados por comas, las proporciones masa-masa en que el nutriente está contenido en cada cereal. Por lo tanto, en la segunda fila del archivo están las proporciones del nutriente 1 en cada cereal, en la tercera están las proporciones del nutriente 2 en cada cereal, y así sucesivamente.
-
-\subsection{Código main.py}
-
-Se debe elaborar y entregar, junto con el desarrollo de la tarea, un código llamado main.py. Ese código debe cumplir una serie de requisitos:\\
-1. Que al ser ejecutado en una carpeta que contenga los 3 archivos de la base de datos, logre abrir los archivos y extraer su información. Puede asumir que los archivos seguirán el formato de archivos de manera exacta.\\
-2. Se debe resolver el modelo utilizando la librería Gurobi. Cada parte del código debe estar comentada de manera brevísima y clara. Además debe asumir que la solución óptima existe.\\
-3. El código debe imprimir en consola de manera clara el valor óptimo y su unidad de medida. Además debe imprimir en consola de manera clara las proporciones óptimas en que se debe incluir cada cereal en la mezcla final de la empresa Gallos.
-\end{questions}
-
-
-
+\setcounter{secnumdepth}{0} % desactiva la numeración de las secciones
+\begin{flushleft}
+\begin{justify}
+\section{Sección}
+\subsection{Subsección}
+Texto de ejemplo. Aqui escribe tu tarea.
+\end{justify}
+\end{flushleft}
 \end{document}

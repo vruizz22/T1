@@ -1,11 +1,26 @@
-import gurobipy 
+from gurobipy import GRB, Model, quicksum
+
+# Implementando el modelo
+model = Model()
+model.setParam("TimeLimit", 60)
+
+# Variables
 
 '''
-Implementación de la función objetivo
+Proporción (masa-masa)
+En la que estará presente el cereal 
+$j \in J$ en la mezcla final
 '''
 
-print("chupenme el pene los weones")
+x_j = model.addVar(vtype=GRB.CONTINUOUS, name="x_j")
+
+model.update()
+
+# Restricciones
 
 '''
-Hola esto es una clase
+La mezcla esta unicamente compuesta
+por cereales
 '''
+
+model.addConstr(x_j == 1, name="cereal")

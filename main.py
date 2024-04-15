@@ -2,7 +2,7 @@ from gurobipy import GRB, Model, quicksum
 '''
 Conjunto de nutrientes I
 donde $i \in I$
-Este rando va de b_i a l_i
+Este rango va de b_i a l_i
 Son porcentajes de masa masa que van de 0 a 1
 si bi es 0,15 significa que el 15% al menos
 debe consisitir en masa de nutriente i
@@ -22,43 +22,66 @@ class Modelo:
         with open('limites.csv', 'r') as limites:
             limites_header = limites.readline().split(',')
             self.limites = [line.strip().split(',') for line in limites.readlines()]
-            self.largo_limites = len(self.limites // 2)
+            self.largo_limites = len(self.limites)
         
         with open('costos.csv', 'r') as costos:
-            costos_header = costos.readline().split(',')
-            self.costos = [line.strip().split(',') for line in costos.readlines()]
-            self.largo_costos = len(self.costos // 2)
+            costos_header = costos.readline()
+            self.costos = [costo.strip() for costo in costos.readlines()]
             
         with open('contenidos_nutricionales.csv', 'r') as contenidos:
-            contenidos_header = contenidos.readline().split(',')
+            self.contenidos_header = contenidos.readline().strip().split(',')
             self.contenidos = [line.strip().split(',') for line in contenidos.readlines()]
             # Definicion de parametros:
-            self.J = {j: self.costos[j] for j in range(len(contenidos_header))}
-            self.I = {i+1: (self.limites[2*i], self.limites[2*i + 1]) for i in range(len(self.limites) // 2)}
+            self.J = {cereal: costo for cereal, costo in zip(self.contenidos_header, self.costos)}            
+            self.I = {i+1: (self.limites[i][0], self.limites[i][1]) for i in range(len(self.limites))}
+            
+        self.a_ij = {i + 1: {self.contenidos_header[j]: self.contenidos[i][j] for j in range(len(self.J))} for i in range(len(self.I))}
 
-
-    def modelar(self):
+    def implementar_modelo(self):
         # Implementando el modelo
         model = Model()
-        model.setParam("TimeLimit", 60)
-
+        
         # Variables
-
-        '''
-        Proporción (masa-masa)
-        En la que estará presente el cereal 
-        $j \in J$ en la mezcla final
-        '''
-
-        x_j = model.addVar(vtype=GRB.CONTINUOUS, name="x_j")
-
+        x_j = model.addVars(self.J, vtype=GRB.CONTINUOUS, name="x_j")
+        
+        # Agregamos las variables al modelo
         model.update()
-
+        
         # Restricciones
-
         '''
-        La mezcla esta unicamente compuesta
-        por cereales
+        1. La mezcla esta compuesta unicamente por cereales
+        2. Se debe cumplir una proporcion minima de nutrientes
+        3. Se debe cunokir una proporcion máxima de nutrientes
+        Naturaleza de Variables
+        x_j >= 0
         '''
+        model.addConstr(quicksum(x_j[j] for j in self.J.keys()) == 1, name="R1")
+        model.addConstrs((quicksum(float(self.a_ij[i][j]) * x_j[j] for j in self.J) >= float(self.I[i][0]) for i in self.I), name="R2")
+        model.addConstrs((quicksum(float(self.a_ij[i][j]) * x_j[j] for j in self.J) <= float(self.I[i][1]) for i in self.I), name="R3")
+        
+        # Función objetivo
+        objetivo = quicksum(float(self.J[j]) * x_j[j] for j in self.J.keys())
+        model.setObjective(objetivo, GRB.MINIMIZE,)
+        
+        # Optimizamos el problema
+        model.optimize()
+        
+        # Manejo de soluciones
+        print("\n"+"-"*10+" Manejo Soluciones "+"-"*10)
+        print(f"El valor objetivo es de: {model.ObjVal}", "{peso/kg}")
+        print()
+        print("Variables de decision:")
+        for j in self.J:
+            print(f"Se debe utilizar {x_j[j].x} kilogramos de {j}")
+        print("\n"+"-"*9+" Restricciones Activas "+"-"*9)
+        for constr in model.getConstrs():
+            if constr.getAttr("slack") == 0:
+                print(f"La restriccion {constr} está activa")
 
-        model.addConstr(x_j == 1, name="cereal")
+if __name__ == '__main__':
+    modelo = Modelo()
+    modelo.implementar_modelo()
+    
+    
+    
+        

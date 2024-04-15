@@ -35,7 +35,8 @@ model.update()
 
 # Crea la restriccion : Definicion de w
 
-model.addConstrs((w >= d[i,j]*y[i,j] for i in Localidades for j in Sitios), name="R1")
+model.addConstrs((w >= d[i,j]*y
+                  [i,j] for i in Localidades for j in Sitios), name="R1")
 
 # Crea la restriccion : Si se asigna un campamento a una localidad, éste debe construirse
 

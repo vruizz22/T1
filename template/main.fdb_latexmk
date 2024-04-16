@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1713048619.59764 "c:/Users/Victor/Repositorios/opti/Tareas/T1/template/main.tex" "main.pdf" "main" 1713048621.22654 0
+["pdflatex"] 1713240100.91677 "c:/Users/Victor/Repositorios/opti/Tareas/T1/template/main.tex" "main.pdf" "main" 1713240102.19684 0
   "C:/Users/Victor/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1712676271 85110 28b33952394aebec78c4c9bc01193974 ""
   "C:/Users/Victor/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710621499 24225559 d72816386c84cfadaaa3a22fff60d50b ""
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -14,7 +14,14 @@
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
+  "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1247596667 36281 c355509802a035cadc5f15869451dcee ""
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
+  "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1247596667 31809 8670ca339bf94e56da1fc21c80635e2a ""
+  "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
+  "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty" 1704647332 150008 7a05b0fdc0167c04e192003e780ab195 ""
@@ -85,11 +92,11 @@
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/Victor/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/Victor/Repositorios/opti/Tareas/T1/template/main.tex" 1713048618 2107 3fd7e27d30ba902fe005ff621431c414 ""
+  "c:/Users/Victor/Repositorios/opti/Tareas/T1/template/main.tex" 1713240100 8636 6027854d3caaea1c4ecadba6139d71b4 ""
   "logo/logo.pdf" 1712617334 660722 4fb4c45e66b325cfacf7669a7a48faaa ""
-  "main.aux" 1713048620 809 a0a1e163b631a7eec280e4e69fa58b8d "pdflatex"
-  "main.out" 1713048620 189 2166ce1f564c18c0e13ea8ffca3d2122 "pdflatex"
-  "main.tex" 1713048618 2107 3fd7e27d30ba902fe005ff621431c414 ""
+  "main.aux" 1713240101 2042 70fe9f1e6fe5912c750e486fa1d71f52 "pdflatex"
+  "main.out" 1713240101 1866 97a31ef4a9d0a5e379537b6f1bf8a78e "pdflatex"
+  "main.tex" 1713240100 8636 6027854d3caaea1c4ecadba6139d71b4 ""
   (generated)
   "main.aux"
   "main.log"

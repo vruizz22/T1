@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.16)  13 APR 2024 18:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.16)  16 APR 2024 00:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -455,7 +455,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
  (C:\Users\Victor\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<logo/logo.pdf, id=11, 240.9pt x 321.2pt>
+<logo/logo.pdf, id=59, 240.9pt x 321.2pt>
 File: logo/logo.pdf Graphic file (type pdf)
 <use logo/logo.pdf>
 Package pdftex.def Info: logo/logo.pdf  used on input line 82.
@@ -467,7 +467,7 @@ Overfull \hbox (3.11354pt too wide) in paragraph at lines 80--91
 
 [1
 
-{C:/Users/Victor/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./logo/logo.pdf>]
+{C:/Users/Victor/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./logo/logo.pdf>] [2] [3]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 This exam has a total of 0 points.
 This exam has a total of 0 bonus points.
@@ -480,20 +480,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2166CE1F564C18C0E13EA8FFCA3D2122;189.
+(rerunfilecheck)             Checksum: 97A31EF4A9D0A5E379537B6F1BF8A78E;1866.
  ) 
 Here is how much of TeX's memory you used:
- 12659 strings out of 474485
- 198798 string characters out of 5743262
- 1930542 words of memory out of 5000000
- 34776 multiletter control sequences out of 15000+600000
+ 12697 strings out of 474485
+ 199313 string characters out of 5743262
+ 1943542 words of memory out of 5000000
+ 34800 multiletter control sequences out of 15000+600000
  561593 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,16n,79p,274b,527s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on main.pdf (1 page, 84999 bytes).
+ 72i,16n,79p,395b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Victor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on main.pdf (3 pages, 177921 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
- 4 named destinations out of 1000 (max. 500000)
- 22 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 18 named destinations out of 1000 (max. 500000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

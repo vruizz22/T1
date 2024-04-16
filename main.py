@@ -56,7 +56,7 @@ class Modelo:
         x_j >= 0
         '''
         model.addConstr(quicksum(x_j[j] for j in self.J.keys()) == 1, name="R1")
-        model.addConstrs((quicksum(float(self.a_ij[i][j]) * x_j[j] for j in self.J) >= float(self.I[i][0]) for i in self.I), name="R2")
+        model.addConstrs(( quicksum(float(self.a_ij[i][j]) * x_j[j] for j in self.J) >= float(self.I[i][0]) for i in self.I), name="R2")
         model.addConstrs((quicksum(float(self.a_ij[i][j]) * x_j[j] for j in self.J) <= float(self.I[i][1]) for i in self.I), name="R3")
         
         # Función objetivo
